@@ -8,14 +8,30 @@ public class MainController {
 	@FXML private TextField message;
 	@FXML private TextArea text;
 	@FXML private void initialize() {
-		Serveur sRun = new Serveur(3200);
-		Thread serveur = new Thread(sRun);
+		Client cRun = new Client();
+		Thread serveur = new Thread(cRun);
 		serveur.start();
 		send.setOnAction(e -> {
 			text.appendText(message.getText()+"\n");
+			cRun.send(message.getText()+"\n");
 			message.clear();
-			System.out.println(sRun.serveur.getLocalPort());
-			//sRun.close();
+			//cRun.close();
+		});
+		Thread t = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				while (true) {
+					try {
+						System.out.println(cRun.receive());
+						text.appendText(cRun.receive());
+					} catch (Exception e) {
+						
+						e.printStackTrace();
+					}
+				}
+				
+			}
 		});
 		
 	}
