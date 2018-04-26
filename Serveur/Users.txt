@@ -1,0 +1,6 @@
+karim:admin:5
+mehdi:admin:5
+amin:user:2
+ali:user:2
+omar:user:1
+morad:user:1

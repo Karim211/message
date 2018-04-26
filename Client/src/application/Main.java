@@ -11,10 +11,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			AnchorPane page = FXMLLoader.load(getClass().getResource("App.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("App.fxml"));
+			AnchorPane page = loader.load();
             Scene scene = new Scene(page);
 			scene.getStylesheets().add(getClass().getResource("material-fx-v0_3.css").toExternalForm());
 			primaryStage.setScene(scene);
+			MainController controller = loader.getController();
+			primaryStage.setOnHidden(e -> controller.exit());
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

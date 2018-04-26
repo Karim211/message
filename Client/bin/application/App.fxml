@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="534.0" prefWidth="514.0" style="-fx-background-color: #EAEAeA;" stylesheets="@material-fx-v0_3.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <SplitPane dividerPositions="0.296875" prefHeight="301.0" prefWidth="149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="156.0">
+               <children>
+                  <Button fx:id="connect" layoutX="25.0" layoutY="485.0" mnemonicParsing="false" text="Connecte" />
+                  <RadioButton fx:id="broad" layoutX="13.0" layoutY="35.0" mnemonicParsing="false" selected="true" text="Broadcast">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gropA" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="sing" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" text="single M" toggleGroup="$gropA" />
+                  <RadioButton fx:id="multi" layoutX="13.0" layoutY="194.0" mnemonicParsing="false" text="Multi M" toggleGroup="$gropA" />
+                  <TextArea fx:id="idA" layoutX="16.0" layoutY="285.0" prefHeight="108.0" prefWidth="117.0" />
+                  <ChoiceBox fx:id="idS" layoutX="-1.0" layoutY="148.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="idM" layoutY="240.0" prefWidth="150.0" />
+                  <TextField fx:id="ip" layoutX="12.0" layoutY="428.0" prefHeight="34.0" prefWidth="125.0" promptText="IP Address" />
+                  <Label layoutX="16.0" layoutY="14.0" text="ID:" />
+                  <Label fx:id="idU" layoutX="57.0" layoutY="15.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="send" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" text="Send"/>
+                  <TextField fx:id="message" prefHeight="34.0" prefWidth="299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="56.0" />
+                  <TextArea fx:id="text" layoutX="88.0" layoutY="228.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
